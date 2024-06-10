@@ -10,7 +10,8 @@ import { routes } from './app.routes';
 import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { take } from 'rxjs';
 import { ConfigService } from './services/config.service';
-import { NgxHttpErrorHandler, NgxHttpErrorInterceptor } from 'ngx-http-error-handler';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { NgxHttpErrorHandlerLibrary, NgxHttpErrorInterceptor } from 'ngx-http-error-handler-lib';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -35,7 +36,8 @@ export const appConfig: ApplicationConfig = {
     },
     {
       provide: ErrorHandler,
-      useClass: NgxHttpErrorHandler,
+      useClass: NgxHttpErrorHandlerLibrary,
     },
+    provideAnimationsAsync(),
   ],
 };

@@ -3,12 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { TestService } from './services/test.service';
 import { CommonModule } from '@angular/common';
 import { ConfigService } from './services/config.service';
-import { NgxHttpErrorHandlerComponent } from 'ngx-http-error-handler';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, NgxHttpErrorHandlerComponent],
+  imports: [RouterOutlet, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
